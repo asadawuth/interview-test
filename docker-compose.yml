@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: test-postgres
+    environment:
+      POSTGRES_DB: Test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  be:
+    build:
+      context: ./test-backend
+    container_name: test-backend
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: Test
+    depends_on:
+      - postgres
+
+  fn:
+    build:
+      context: ./TestFn
+    container_name: test-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - be
+
+volumes:
+  postgres_data:
