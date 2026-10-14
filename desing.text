@@ -16,3 +16,4 @@ Postgressql ไม่ได้ใช่ Orm เพราะเหมือนโ
 Path เป็น Express
 
 การจำลองการทำงานเลือกใช้ Docker เพราะ ใช้ง่ายต่อการเข้าถึง 
+docker compose up --build -d
