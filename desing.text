@@ -1,0 +1,18 @@
+.env หลังบ้าน 
+PORT=3000
+DATABASE_URL=postgresql://postgres:12345678@postgres:5432/Test
+
+.env หน้าบ้าน
+VITE_API_URL=http://localhost:3000
+
+None Ai
+หน้าบ้านผมเลือกใช้ React ภาษา Typescritp เป็น React Vite เพราะเป็นงานองค์กร
+ไม่จำเป็นต้องใช้ Next เพราะไม่ใช่เว็ป Bunsiness เพื่อทำ Seo ให้คนดูเยอะๆ 
+ส่วน CssFramework เลือกใช้ Tailwind 
+
+ส่วนหลังบ้านเลือกใช้ Nest ภาษา Typescritp 
+Database เลือกใช้ Pgadmin4 เพราะเขียนแบบ
+Postgressql ไม่ได้ใช่ Orm เพราะเหมือนโจทย์ต้องการให้เขียน Raw Query 
+Path เป็น Express
+
+การจำลองการทำงานเลือกใช้ Docker เพราะ ใช้ง่ายต่อการเข้าถึง 
